@@ -8,12 +8,12 @@ function ProjectCard({ project }) {
           <span />
           <span />
           <span />
-          <small>{project.previewLabel}</small>
+          <small>LIVE PREVIEW</small>
         </div>
         <div className="project-source-preview">
           <span className="project-preview-number">{project.number}</span>
           <strong>{project.title}</strong>
-          <small>{project.previewLabel}</small>
+          <span className="project-live-badge"><i /> Live project</span>
         </div>
         <b>{project.number}</b>
       </div>

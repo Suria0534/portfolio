@@ -319,6 +319,15 @@ img { display: block; max-width: 100%; }
 .project-card:hover .project-card-preview { transform: scale(0.985); }
 .project-card.blue .project-card-preview { background: linear-gradient(145deg, #b4d4dc, #6e9fb4); }
 .project-card.coral .project-card-preview { background: linear-gradient(145deg, #e08468, #a94f50); }
+.project-card-preview::before {
+  content: '';
+  position: absolute;
+  inset: 32px 0 0;
+  opacity: 0.25;
+  background-image: linear-gradient(rgba(255,255,255,0.42) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.42) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: linear-gradient(to bottom, black, transparent 82%);
+}
 .project-card-preview::after {
   content: '';
   position: absolute;
@@ -359,6 +368,8 @@ img { display: block; max-width: 100%; }
   white-space: nowrap;
 }
 .project-source-preview {
+  position: relative;
+  z-index: 1;
   display: grid;
   height: 100%;
   place-content: center;
@@ -368,15 +379,26 @@ img { display: block; max-width: 100%; }
   text-align: center;
 }
 .project-source-preview strong { font-size: clamp(24px, 3vw, 36px); letter-spacing: -1px; }
-.project-source-preview small {
-  color: rgba(255,255,255,0.72);
+.project-live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  justify-self: center;
+  padding: 7px 10px;
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.84);
   font: 10px 'DM Mono', monospace;
   letter-spacing: 0.08em;
-  max-width: 90%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
   text-transform: uppercase;
+}
+.project-live-badge i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #baf2c0;
+  box-shadow: 0 0 0 4px rgba(186,242,192,0.14);
 }
 .project-preview-number {
   display: grid;
