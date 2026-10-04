@@ -593,10 +593,10 @@ img { display: block; max-width: 100%; }
   color: #d06d5d;
   font: 600 50px 'Playfair Display', serif;
   letter-spacing: -3px;
-  transition: transform 0.45s ease, letter-spacing 0.45s ease;
+  transition: transform 1.4s cubic-bezier(0.22, 1, 0.36, 1), letter-spacing 0.45s ease;
 }
 .contact-orbit:hover span {
-  transform: scale(1.06);
+  transform: rotate(360deg) scale(1.06);
   letter-spacing: -2px;
 }
 
