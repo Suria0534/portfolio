@@ -1,0 +1,525 @@
+/* ```css
+/* =================================
+   HERO SECTION
+================================= */
+
+.hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+  align-items: center;
+  gap: 48px;
+  min-height: 720px;
+  margin-top: 40px;
+  padding: 64px 0 70px;
+  box-sizing: border-box;
+}
+
+.hero::before {
+  position: absolute;
+  inset: -40px -10vw;
+  z-index: -1;
+  content: '';
+  /* background:
+    radial-gradient(
+      ellipse at 80% 45%,
+      rgba(103, 232, 213, 0.10),
+      transparent 45%
+    ),
+    radial-gradient(
+      ellipse at 15% 50%,
+      rgba(167, 139, 250, 0.13),
+      transparent 48%
+    ),
+    #101426; */
+}
+
+/* =================================
+   LEFT SIDE TEXT
+================================= */
+
+.hero-copy {
+  min-width: 0;
+  width: 100%;
+  text-align: left;
+}
+
+/* =================================
+   HELLO I AM ANIMATION
+================================= */
+
+.home-kicker {
+  display: flex;
+  justify-content: flex-start;
+  gap: 9px;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 0 12px;
+  color: #67e8d5;
+  font: 800 20px 'DM Mono', monospace;
+}
+
+.home-kicker span {
+  display: inline-block;
+  opacity: 0;
+  animation: word-appear 0.6s ease forwards;
+}
+
+.home-kicker span:nth-child(1) {
+  animation-delay: 0.3s;
+}
+
+.home-kicker span:nth-child(2) {
+  animation-delay: 0.9s;
+}
+
+.home-kicker span:nth-child(3) {
+  animation-delay: 1.5s;
+}
+
+@keyframes word-appear {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =================================
+   NAME TYPEWRITER ANIMATION
+================================= */
+
+.home-name {
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  margin: 0;
+  padding-right: 14px;
+  box-sizing: border-box;
+  overflow: visible;
+
+  color: transparent;
+  background: linear-gradient(
+    90deg,
+    #f5f6ff 0%,
+    #a78bfa 50%,
+    #67e8d5 100%
+  );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(2.3rem, 4vw, 4rem);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.035em;
+  white-space: nowrap;
+
+  clip-path: inset(0 100% 0 0);
+  animation: name-reveal 4s ease-in-out 2.2s infinite;
+}
+
+@keyframes name-reveal {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  55% {
+    clip-path: inset(0 0 0 0);
+  }
+
+  85% {
+    clip-path: inset(0 0 0 0);
+  }
+
+  100% {
+    clip-path: inset(0 100% 0 0);
+  }
+}
+
+/* =================================
+   IDENTITY AND INTRO
+================================= */
+
+.hero .identity-line {
+  width: max-content;
+  margin: 18px 0 24px;
+  color: #a78bfa;
+  border-color: rgba(167, 139, 250, 0.28);
+}
+
+.hero .identity-dot {
+  background: #67e8d5;
+  box-shadow: 0 0 0 4px rgba(103, 232, 213, 0.14);
+}
+
+.hero .hero-intro {
+  max-width: 520px;
+  margin: 0 0 28px;
+  color: #c4c7d8;
+  font: 400 15px/1.8 'Inter', sans-serif;
+  text-align: left;
+}
+
+/* =================================
+   BUTTONS
+================================= */
+
+.hero .hero-actions {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.button {
+  min-height: 44px;
+  padding: 12px 20px;
+  border-radius: 999px;
+  font: 600 13px 'Inter', sans-serif;
+  transition: 0.3s ease;
+}
+
+.button-dark {
+  color: var(--midnight);
+  background: var(--cyan);
+  box-shadow: 0 12px 28px rgba(103, 232, 213, 0.16);
+}
+
+.button-dark:hover {
+  background: #b8fff2;
+  transform: translateY(-2px);
+}
+
+.button-soft {
+  border: 1px solid var(--line);
+  color: var(--text);
+  background: rgba(167, 139, 250, 0.08);
+}
+
+.button-soft:hover {
+  border-color: var(--lavender);
+  background: rgba(167, 139, 250, 0.16);
+  transform: translateY(-2px);
+}
+
+/* =================================
+   HERO IMAGE / ART
+================================= */
+
+.hero .hero-visual-wrap {
+  display: flex;
+  justify-content: center;
+  min-width: 0;
+  margin-top: 20px;
+}
+
+.hero .hero-art {
+  position: relative;
+  display: grid;
+  width: min(100%, 520px);
+  height: 500px;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid rgba(167, 139, 250, 0.22);
+  border-radius: 34px 34px 120px 34px;
+  background: #1d2540;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.3);
+}
+
+.hero .hero-art::before {
+  position: absolute;
+  width: 70%;
+  height: 82%;
+  left: -18%;
+  bottom: -22%;
+  border-radius: 50% 50% 0 0;
+  content: '';
+  background: #6978b8;
+  transform: rotate(13deg);
+}
+
+.hero .hero-art::after {
+  position: absolute;
+  inset: 22px;
+  border: 1px solid rgba(103, 232, 213, 0.18);
+  border-radius: 24px 24px 104px 24px;
+  content: '';
+  pointer-events: none;
+}
+
+.art-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.2;
+  background-image:
+    linear-gradient(rgba(245, 246, 255, 0.25) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245, 246, 255, 0.25) 1px, transparent 1px);
+  background-size: 34px 34px;
+  mask-image: linear-gradient(to bottom, black, transparent 80%);
+}
+
+.art-stamp {
+  position: absolute;
+  top: 42px;
+  left: 44px;
+  z-index: 2;
+  color: rgba(245, 246, 255, 0.72);
+  font: 10px/1.7 'DM Mono', monospace;
+  letter-spacing: 0.2em;
+}
+
+.art-badge {
+  position: absolute;
+  right: 36px;
+  bottom: 34px;
+  z-index: 3;
+  padding: 13px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 12px;
+  color: var(--midnight);
+  background: rgba(245, 246, 255, 0.92);
+  font: 10px/1.5 'DM Mono', monospace;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.art-badge strong {
+  font-size: 15px;
+}
+
+/* =================================
+   DEVELOPER ORBIT
+================================= */
+
+.developer-orbit {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 470px);
+  aspect-ratio: 1;
+}
+
+.orbit-track {
+  position: absolute;
+  inset: 5%;
+  border: 1px solid rgba(103, 232, 213, 0.36);
+  border-radius: 50%;
+  animation: orbit-spin 24s linear infinite;
+}
+
+.orbit-track-two {
+  inset: 15%;
+  animation-duration: 18s;
+  animation-direction: reverse;
+}
+
+.orbit-chip {
+  position: absolute;
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border: 1px solid rgba(103, 232, 213, 0.3);
+  border-radius: 15px;
+  color: var(--midnight);
+  background: #eef1ff;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+  font: 600 12px 'DM Mono', monospace;
+}
+
+.orbit-track-one .orbit-chip {
+  animation: orbit-chip-counter-one 24s linear infinite;
+}
+
+.orbit-track-two .orbit-chip {
+  animation: orbit-chip-counter-two 18s linear infinite;
+}
+
+.orbit-chip-code {
+  top: -22px;
+  left: 22%;
+  color: #8068dc;
+}
+
+.orbit-chip-db {
+  top: 42%;
+  right: -22px;
+  color: #327f77;
+}
+
+.orbit-chip-react {
+  bottom: -22px;
+  left: 26%;
+  color: #568298;
+  font-size: 22px;
+}
+
+.orbit-chip-terminal {
+  top: 40%;
+  left: -22px;
+  color: #8068dc;
+}
+
+.orbit-chip-api {
+  right: 7%;
+  bottom: 8%;
+  color: #327f77;
+}
+
+/* =================================
+   DEVELOPER CHARACTER
+================================= */
+
+.developer-character {
+  position: absolute;
+  inset: 20%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  border: 5px solid rgba(245, 246, 255, 0.86);
+  border-radius: 50%;
+  background: #f5f6fb;
+  box-shadow:
+    0 20px 35px rgba(0, 0, 0, 0.2),
+    0 0 0 10px rgba(167, 139, 250, 0.1);
+}
+
+.developer-character img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+/* =================================
+   KEYFRAMES
+================================= */
+
+@keyframes orbit-spin {
+  to {
+    transform: rotate(342deg);
+  }
+}
+
+@keyframes orbit-chip-counter-one {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes orbit-chip-counter-two {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =================================
+   TABLET RESPONSIVE
+================================= */
+
+@media (max-width: 1000px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 0.85fr);
+    gap: 26px;
+  }
+
+  .home-name {
+    font-size: clamp(2rem, 3.8vw, 3.2rem);
+  }
+
+  .hero .hero-art {
+    height: 440px;
+  }
+}
+
+/* =================================
+   MOBILE RESPONSIVE
+================================= */
+
+@media (max-width: 760px) {
+  .hero {
+    display: block;
+    min-height: 0;
+    padding: 54px 0 58px;
+  }
+
+  .hero-copy {
+    text-align: left;
+  }
+
+  .home-kicker {
+    font-size: 16px;
+  }
+
+  .home-name {
+    font-size: clamp(2rem, 7vw, 3rem);
+    letter-spacing: -0.035em;
+    padding-right: 12px;
+  }
+
+  .hero .identity-line {
+    font-size: 9px;
+  }
+
+  .hero .hero-visual-wrap {
+    margin-top: 42px;
+  }
+
+  .hero .hero-art {
+    width: min(100%, 520px);
+    height: min(112vw, 470px);
+    min-height: 340px;
+    margin: 0 auto;
+  }
+
+  .hero-actions .button {
+    flex: 1 1 180px;
+  }
+
+  .orbit-chip {
+    width: 40px;
+    height: 40px;
+    font-size: 10px;
+  }
+}
+
+/* =================================
+   SMALL MOBILE
+================================= */
+
+@media (max-width: 420px) {
+  .home-name {
+    font-size: clamp(1.7rem, 7.5vw, 2.3rem);
+    letter-spacing: -0.04em;
+  }
+
+  .hero-actions .button {
+    width: 100%;
+  }
+
+  .hero .hero-art {
+    min-height: 320px;
+  }
+}
+
+/* =================================
+   ACCESSIBILITY
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .home-kicker span,
+  .home-name,
+  .orbit-track,
+  .orbit-chip {
+    animation: none;
+    opacity: 1;
+    clip-path: none;
+  }
+}
