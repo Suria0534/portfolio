@@ -45,22 +45,7 @@ function About() {
 					<div className="about-card"><span className="about-icon"><FaLightbulb aria-hidden="true" /></span><h3>Problem Solver</h3><p>Turning real-world challenges into solutions.</p></div>
           
 				</div>
-        <div className="about-cv">
-  <a
-    href="/cv/Suraiya-Sultana-CV.pdf"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="about-card cv-card"
-  >
-    <span className="about-icon">
-      <FaFilePdf />
-    </span>
-
-    <h3>My Resume</h3>
-    <p>Explore my education, technical skills and experience.</p>
-    <span className="cv-link">View My CV ↗</span>
-  </a>
-</div>
+        
 			</div>
 		</section>
 	);
