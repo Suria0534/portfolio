@@ -1,3 +1,5 @@
+
+
 import ProjectCard from '../components/ProjectCard';
 import '../styles/Projects.css';
 
@@ -7,6 +9,7 @@ const projects = [
 		accent: 'coral',
 		type: 'Business website',
 		title: 'A. Momin Engineering',
+		image: '/images/amomin.png',
 		description: 'A confident, editorial website for a construction firm, with services, completed work and company credentials in one clear experience.',
 		tags: ['React', 'Responsive UI', 'Business'],
 		href: 'https://construction-fk1o.vercel.app/',
@@ -17,6 +20,7 @@ const projects = [
 		accent: 'blue',
 		type: 'Civic technology',
 		title: 'FloodRelief Hub',
+		image: '/images/flood.png',
 		description: 'A real-time flood support platform connecting victims, volunteers and NGOs with shelters, resources, updates and donations.',
 		tags: ['React', 'Community', 'Dashboard'],
 		href: 'https://flood-management-bo86.vercel.app/',
@@ -27,6 +31,7 @@ const projects = [
 		accent: 'sage',
 		type: 'University community',
 		title: 'BracuNet',
+		image: '/images/brac.png',
 		description: 'A focused digital space for BRAC University students, alumni and faculty to connect and get started together.',
 		tags: ['React', 'Community', 'Product UI'],
 		href: 'https://bracu-net.vercel.app/',
@@ -40,13 +45,20 @@ function Projects() {
 			<div className="section-heading">
 				<p className="project-section-label" aria-label="Selected work">
 					{'SELECTED WORK'.split('').map((letter, index) => (
-						<span key={`${letter}-${index}`}>{letter === ' ' ? '\u00a0' : letter}</span>
+						<span key={`${letter}-${index}`}>
+							{letter === ' ' ? '\u00a0' : letter}
+						</span>
 					))}
 				</p>
 			</div>
+
 			<div className="project-list">
 				{projects.map((project, index) => (
-					<ProjectCard key={project.number} project={project} featured={index === 0} />
+					<ProjectCard
+						key={project.number}
+						project={project}
+						featured={index === 0}
+					/>
 				))}
 			</div>
 		</section>
