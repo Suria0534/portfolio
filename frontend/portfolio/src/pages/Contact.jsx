@@ -11,19 +11,19 @@ const socials = [
 		accent: 'whatsapp',
 	},
 	{
-		label: 'Facebook',
-		handle: 'Suraiya Sultana',
-		href: 'https://www.facebook.com/',
-		icon: <FiFacebook aria-hidden="true" />,
-		accent: 'facebook',
-	},
+    label: 'Facebook',
+    handle: 'Suraiya Sultana',
+    href: 'https://www.facebook.com/suraiya.silvia.5/about',
+    icon: <FiFacebook aria-hidden="true" />,
+    accent: 'facebook',
+},,
 	{
-		label: 'GitHub',
-		handle: 'Profile coming soon',
-		href: 'https://github.com/',
-		icon: <FiGithub aria-hidden="true" />,
-		accent: 'github',
-	},
+    label: 'GitHub',
+    handle: 'Suria0534',
+    href: 'https://github.com/Suria0534',
+    icon: <FiGithub aria-hidden="true" />,
+    accent: 'github',
+},
 ];
 
 function Contact() {
