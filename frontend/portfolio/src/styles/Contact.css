@@ -1,0 +1,434 @@
+
+/* =================================
+   CONTACT SECTION
+================================= */
+
+.contact-section {
+  position: relative;
+  isolation: isolate;
+  clear: both;
+
+  width: 100%;
+  margin: 90px 0 0;
+  padding: 100px 24px 85px;
+
+  overflow: hidden;
+
+  border-top: 1px solid rgba(167, 139, 250, 0.16);
+
+  background:
+    linear-gradient(
+      180deg,
+      #0c1224 0%,
+      #10182e 100%
+    );
+}
+
+/* Subtle background glow */
+
+.contact-section::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+
+  width: 500px;
+  height: 500px;
+
+  top: 10%;
+  right: -200px;
+
+  border-radius: 50%;
+  background: rgba(167, 139, 250, 0.08);
+  filter: blur(120px);
+
+  pointer-events: none;
+}
+
+/* =================================
+   MAIN LAYOUT
+================================= */
+
+.contact-card {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 1fr 0.85fr;
+  align-items: center;
+
+  gap: 90px;
+
+  width: min(100%, 1120px);
+  margin: 0 auto;
+  padding: 20px 0 75px;
+
+  color: var(--text);
+  background: transparent;
+}
+
+/* =================================
+   LEFT CONTENT
+================================= */
+
+.contact-intro {
+  max-width: 530px;
+}
+
+.contact-copy {
+  max-width: 460px;
+  margin: 0;
+
+  color: #a8b1ca;
+
+  font: 400 14px/1.9 'Inter', sans-serif;
+}
+
+/* Small label */
+
+.contact-copy::before {
+  content: "GET IN TOUCH";
+
+  display: inline-block;
+  margin-bottom: 25px;
+  padding: 8px 13px;
+
+  border: 1px solid rgba(103, 232, 213, 0.25);
+  border-radius: 30px;
+
+  color: #67e8d5;
+  background: rgba(103, 232, 213, 0.06);
+
+  font: 600 10px 'DM Mono', monospace;
+  letter-spacing: 0.18em;
+}
+
+/* Main heading */
+
+.contact-card h2 {
+  max-width: 520px;
+  margin: 0 0 25px;
+
+  color: #f5f5fa;
+
+  font: 600 clamp(3rem, 5.5vw, 5rem)/1.05
+    'Space Grotesk', sans-serif;
+
+  letter-spacing: -0.065em;
+}
+
+.contact-card h2 em {
+  color: #a78bfa;
+  font-style: normal;
+}
+
+/* =================================
+   CONTACT FORM
+================================= */
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  width: 100%;
+  max-width: 450px;
+  justify-self: end;
+
+  padding: 30px;
+
+  border: 1px solid rgba(197, 183, 255, 0.16);
+  border-radius: 20px;
+
+  background: rgba(25, 34, 61, 0.55);
+
+  box-shadow:
+    0 20px 55px rgba(0, 0, 0, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.contact-form label {
+  margin-top: 8px;
+
+  color: #aab4d6;
+
+  font: 600 10px 'DM Mono', monospace;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  margin-bottom: 7px;
+  padding: 14px 15px;
+
+  border: 1px solid rgba(197, 183, 255, 0.17);
+  border-radius: 10px;
+
+  outline: none;
+
+  color: #f5f5fa;
+  background: rgba(9, 15, 32, 0.55);
+
+  font: 13px 'Inter', sans-serif;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.contact-form input {
+  height: 48px;
+}
+
+.contact-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #697590;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #a78bfa;
+  background: rgba(9, 15, 32, 0.8);
+
+  box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.09);
+}
+
+/* Submit button */
+
+.contact-form .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  align-self: flex-start;
+  min-height: 46px;
+  margin-top: 8px;
+  padding: 0 22px;
+
+  border: 1px solid transparent;
+  border-radius: 9px;
+
+  color: #101426;
+  background: #67e8d5;
+
+  font: 600 12px 'Inter', sans-serif;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.contact-form .button:hover {
+  background: #a78bfa;
+  transform: translateY(-3px);
+}
+
+/* =================================
+   SOCIAL LINKS
+================================= */
+
+.social-links-group {
+  width: min(100%, 1120px);
+  margin: 0 auto;
+  padding-top: 28px;
+
+  border-top: 1px solid rgba(197, 183, 255, 0.13);
+}
+
+.social-heading {
+  margin: 0 0 20px;
+
+  color: #8994b2;
+
+  font: 600 10px 'DM Mono', monospace;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.social-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
+}
+
+.social-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 9px 15px 9px 9px;
+
+  border: 1px solid rgba(197, 183, 255, 0.14);
+  border-radius: 12px;
+
+  color: #d9dced;
+  text-decoration: none;
+
+  background: rgba(255, 255, 255, 0.025);
+
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.social-button:hover {
+  border-color: rgba(103, 232, 213, 0.4);
+  background: rgba(103, 232, 213, 0.06);
+  transform: translateY(-3px);
+}
+
+.social-button .social-icon {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+
+  border-radius: 9px;
+
+  color: #67e8d5;
+  background: rgba(103, 232, 213, 0.08);
+
+  font-size: 17px;
+}
+
+.social-button .social-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+
+  color: #f5f5fa;
+}
+
+.social-button .social-text strong {
+  font: 600 11px 'Inter', sans-serif;
+}
+
+.social-button .social-text small {
+  color: #8994b2;
+  font: 10px 'DM Mono', monospace;
+}
+
+/* =================================
+   FOOTER
+================================= */
+
+.site-footer {
+  width: 100%;
+  border-top: 1px solid rgba(197, 183, 255, 0.1);
+  background: #090e1d;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  width: min(100% - 48px, 1120px);
+  min-height: 75px;
+
+  margin: 0 auto;
+
+  color: #8994b2;
+
+  font: 10px 'DM Mono', monospace;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 900px) {
+  .contact-card {
+    gap: 40px;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .contact-form {
+    padding: 23px;
+  }
+}
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 760px) {
+  .contact-section {
+    margin-top: 55px;
+    padding: 70px 18px 55px;
+  }
+
+  .contact-card {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding: 10px 0 45px;
+  }
+
+  .contact-card h2 {
+    font-size: clamp(2.8rem, 11vw, 4rem);
+  }
+
+  .contact-form {
+    max-width: none;
+    justify-self: stretch;
+  }
+
+  .social-links-group {
+    padding-top: 25px;
+  }
+
+  .social-buttons {
+    gap: 10px;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    justify-content: center;
+    min-height: 90px;
+    padding: 20px 0;
+    text-align: center;
+  }
+}
+
+@media (max-width: 420px) {
+  .contact-section {
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  .contact-form {
+    padding: 20px 16px;
+  }
+
+  .social-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .social-button {
+    width: 100%;
+  }
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .social-button,
+  .contact-form .button {
+    transition: none;
+  }
+}

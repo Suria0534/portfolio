@@ -1,34 +1,51 @@
+import { useEffect, useRef, useState } from 'react'
 import { FiArrowUpRight } from 'react-icons/fi'
 
-function ProjectCard({ project }) {
-  return (
-    <a className={`project-card ${project.accent}`} href={project.href} target="_blank" rel="noreferrer" aria-label={`Open ${project.title} live project`}>
-      <div className="project-card-preview">
-        <div className="project-window-bar">
-          <span />
-          <span />
-          <span />
-          <small>LIVE PREVIEW</small>
-        </div>
-        <div className="project-source-preview">
-          <span className="project-preview-number">{project.number}</span>
-          <strong>{project.title}</strong>
-          <span className="project-live-badge"><i /> Live project</span>
-        </div>
-        <b>{project.number}</b>
-      </div>
+function ProjectCard({ project, featured = false }) {
+  const cardRef = useRef(null)
+  const [visible, setVisible] = useState(false)
 
-      <div className="project-card-body">
-        <p className="project-type">{project.type}</p>
-        <h3>{project.title}</h3>
-        <p className="project-description">{project.description}</p>
-        <div className="tags">
-          {project.tags.map((tag) => <span key={tag}>{tag}</span>)}
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true)
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.14 },
+    )
+
+    if (cardRef.current) observer.observe(cardRef.current)
+    return () => observer.disconnect()
+  }, [])
+
+  return (
+    <article ref={cardRef} className={`project-card ${project.accent}${featured ? ' project-card-featured' : ''}${visible ? ' is-visible' : ''}`}>
+      <div className="project-browser">
+        <div className="project-browser-bar">
+          <span />
+          <span />
+          <span />
+          <small>live preview</small>
         </div>
-        <span className="project-link">{project.linkLabel} <FiArrowUpRight aria-hidden="true" /></span>
+        <div className="project-preview">
+          <img
+            src={`https://image.thum.io/get/width/1200/crop/800/${project.href}`}
+            title={`${project.title} homepage preview`}
+            alt={`${project.title} homepage preview`}
+            loading="lazy"
+          />
+        </div>
       </div>
-      <FiArrowUpRight className="project-card-arrow" aria-hidden="true" />
-    </a>
+      <div className="project-card-heading">
+        {/* <span className="project-card-number">{project.number}</span> */}
+        <h3 className="card_title">{project.title}</h3>
+      </div>
+      <a className="button" href={project.href} target="_blank" rel="noreferrer">
+        Open project <FiArrowUpRight aria-hidden="true" />
+      </a>
+    </article>
   )
 }
 
